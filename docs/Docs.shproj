@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>06caadc7-de5b-47b4-ab2a-e9501459a2d1</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="About\Azure\**" />
+    <Compile Remove="About\BuildBot\**" />
+    <Compile Remove="images\AzureDevOps\**" />
+    <Compile Remove="images\visualization\**" />
+    <EmbeddedResource Remove="About\Azure\**" />
+    <EmbeddedResource Remove="About\BuildBot\**" />
+    <EmbeddedResource Remove="images\AzureDevOps\**" />
+    <EmbeddedResource Remove="images\visualization\**" />
+    <None Remove="About\Azure\**" />
+    <None Remove="About\BuildBot\**" />
+    <None Remove="images\AzureDevOps\**" />
+    <None Remove="images\visualization\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="demos\Demo1\Demo1_Output.ts" />
+    <None Include="demos\Demo1\Demo1_Source.ts" />
+    <None Include="demos\Demo1\tessdata\COPYING" />
+    <None Include="demos\Demo1\tessdata\eng.traineddata" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+    <Folder Include="tests\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project=".docproj\DocProj.props" />
+  <Import Project=".docproj\DocProj.targets" />
+</Project>
